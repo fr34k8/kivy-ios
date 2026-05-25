@@ -37,10 +37,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -e .
-        pip install pytest
-    - name: Run pytest
+        pip install pytest pytest-cov
+    - name: Run pytest with coverage
       run: |
-        pytest tests/tools -v
+        pytest tests/tools -v --cov=kivy_ios --cov-report=term-missing --cov-report=xml
 
   build_python3_kivy:
     runs-on: ${{ matrix.runs_on }}

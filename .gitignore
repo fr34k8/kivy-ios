@@ -2,6 +2,9 @@
 *.pyc
 *.pyo
 *.swp
+.coverage
+coverage.xml
+htmlcov/
 freetype-*
 build/*
 dist/*
