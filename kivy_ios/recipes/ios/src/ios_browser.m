@@ -9,7 +9,8 @@
 
 void ios_open_url(char *url)
 {
-	NSURL *nsurl = [NSURL URLWithString: url];
+	NSString *urlString = [NSString stringWithUTF8String:url];
+	NSURL *nsurl = [NSURL URLWithString: urlString];
     if (@available(iOS 10.0, *)) {
 		[[UIApplication sharedApplication] openURL:nsurl options:@{} completionHandler:nil];
     } else {
